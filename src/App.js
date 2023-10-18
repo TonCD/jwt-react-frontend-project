@@ -7,6 +7,10 @@ import {
 } from "react-router-dom";
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 function App() {
   return (
     <Router>
@@ -14,7 +18,7 @@ function App() {
         {/* <Nav /> */}
         <Switch>
           <Route exact path="/news">
-           News
+            News
           </Route>
           <Route path="/about">
             about
@@ -23,10 +27,10 @@ function App() {
             contact
           </Route>
           <Route path="/login">
-            <Login/>
+            <Login />
           </Route>
           <Route path="/register">
-              <Register/>
+            <Register />
           </Route>
           <Route path="/" exact>
             home
@@ -35,8 +39,20 @@ function App() {
             404
           </Route>
         </Switch>
- 
+
       </div>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </Router>
 
   );
